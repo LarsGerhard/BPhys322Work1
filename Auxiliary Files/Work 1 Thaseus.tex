@@ -43,10 +43,10 @@
 				We can put in our initial conditions to get
 				
 				\begin{gather*}
-				    0 = C_1 Cos(\omega t) + C_2 Sin(\omega t) + \frac{E}{B}t + C_3\\
-				    0 = C_2 Cos(\omega t) - C1 Sin(\omega t) + C_4\\
-				    \frac{E}{2B} = - C_1 \omega Sin(\omega t) + C_2 \omega Cos(\omega t) + \frac{E}{B}\\
-				    0 = -C_1 \omega Cos(\omega t) - C_2 \omega Sin(\omega t)\\
+				    0 = C_1 + C_3\\
+				    0 = C_2 + C_4\\
+				    \frac{E}{2B} = C_2 \omega + \frac{E}{B}\\
+				    0 = -C_1 \omega \\
 				\end{gather*}
 				
 				Back to my favourite program to find the constants
@@ -88,7 +88,7 @@
 
 				We then know
 
-				\[\b{x}_0 = 0 \text{ and }\b{v}_0 = \frac{E}{2B}\hat{y} \]
+				\[\b{x}_0 = 0 \text{ and }\b{v}_0 = \frac{E}{B}(\hat{y} + \hat{z}) \]
 
 
 				We can put in our initial conditions to get
@@ -96,9 +96,11 @@
 				\begin{gather*}
 				    0 = C_1 Cos(\omega t) + C_2 Sin(\omega t) + \frac{E}{B}t + C_3\\
 				    0 = C_2 Cos(\omega t) - C1 Sin(\omega t) + C_4\\
-				    \frac{E}{2B} = - C_1 \omega Sin(\omega t) + C_2 \omega Cos(\omega t) + \frac{E}{B}\\
-				    0 = -C_1 \omega Cos(\omega t) - C_2 \omega Sin(\omega t)\\
+				    \frac{E}{B} = - C_1 \omega Sin(\omega t) + C_2 \omega Cos(\omega t) + \frac{E}{B}\\
+				    \frac{E}{B} = -C_1 \omega Cos(\omega t) - C_2 \omega Sin(\omega t)\\
 				\end{gather*}
+
+
 
 
 \end{document}
