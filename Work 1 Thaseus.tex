@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,setspace,mathtools,amssymb,booktabs,graphicx, multicol}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[letterpaper,portrait,margin=0.5cm]{geometry}
+
+\graphicspath{ {./} }
+
+
+\title{Work 1 }
+
+\author{Thaseus Karkabe-Olson}
+
+\date{}
+
+\begin{document}
+	
+	
+	\maketitle
+		\raggedright
+
+		TEST!
+
+		\section*{Problem 5.2}
+			From example 5.2 we know that our equations of motion are
+	
+			\begin{gather*}
+			    y(t) = C_1 Cos(\omega t) + C_2 Sin(\omega t) + \frac{E}{B}t + C_3\\
+			    z(t) = C_2 Cos(\omega t) - C1 Sin(\omega t) + C_4\\
+			\end{gather*}
+			
+			where
+			
+			\[ \omega = \frac{Q B}{m} \]
+				
+			\subsection*{Part b}
+			
+				We then know
+				
+				\[\b{x}_0 = 0 \text{ and }\b{v}_0 = \frac{E}{2B}\hat{y} \]
+				
+
+				We can put in our initial conditions to get
+				
+				\begin{gather*}
+				    0 = C_1 Cos(\omega t) + C_2 Sin(\omega t) + \frac{E}{B}t + C_3\\
+				    0 = C_2 Cos(\omega t) - C1 Sin(\omega t) + C_4\\
+				    \frac{E}{2B} = - C_1 \omega Sin(\omega t) + C_2 \omega Cos(\omega t) + \frac{E}{B}\\
+				    0 = -C_1 \omega Cos(\omega t) - C_2 \omega Sin(\omega t)\\
+				\end{gather*}
+				
+				Back to my favourite program to find the constants
+				
+				\[\text{Input: } \text{FullSimplify}\left[\text{RowReduce}\left[\left(
+				\begin{array}{ccccc}
+					\cos (0) & \sin (0) & 1 & 0 & 0 \\
+					-\sin (0) & \cos (0) & 0 & 1 & 0 \\
+					-\omega  \sin (0) & \omega  \cos (0) & 0 & 0 & \frac{e}{2 B} \\
+					-\omega  \cos (0) & -\omega  \sin (0) & 0 & 0 & 0 \\
+				\end{array}
+				\right)\right]\right] \]
+				
+				\[\text{Output: } \left(
+				\begin{array}{ccccc}
+					1 & 0 & 0 & 0 & 0 \\
+					0 & 1 & 0 & 0 & \frac{e}{2 B \omega } \\
+					0 & 0 & 1 & 0 & 0 \\
+					0 & 0 & 0 & 1 & -\frac{e}{2 B \omega } \\
+				\end{array}
+				\right) \]
+				
+				After simplifying, it turns out that our equations of motion are
+				
+				\begin{gather*}
+				    y(t) = \frac{E (2 t \omega +\sin (t \omega ))}{2 B \omega }\\
+				    z(t) = \frac{E (\cos (t \omega )-1)}{2 B \omega }\\
+				\end{gather*}
+
+				Using some sample numbers and running these equations in python, we get the following behaviour
+
+				\includegraphics[scale = 0.75]{Figure_1}
+
+				From this we can conclude that there is no motion in the x direction, that the particle follows an almost linear path in the y direction, and that it spins in a circle in the z direction
+
+				
+			
+			\subsection*{Part c}
+
+
+
+\end{document}
